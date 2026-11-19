@@ -1,0 +1,3 @@
+--2. Marketing wants to re-engage people who registered but never bought. List the
+--customers who have never placed an order. Required output: customer_id,
+--customer_name, signup_date.use Voltkartselect distinct order_status from fact_ordersselect dc.customer_id,dc.customer_name, dc.signup_date from dim_customer dc where NOT EXISTS  (   select 1     from fact_orders fo	where fo.customer_id = dc.customer_id )
